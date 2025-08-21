@@ -1,18 +1,20 @@
+import React from "react";
 import useLocalStorage from "../hooks/useLocalStorage";
 
-export default function Example() {
+export default function App() {
   const [name, setName] = useLocalStorage("username", "");
 
   return (
-    <div>
-      <h2>Soal 10 - useLocalStorage + useDebugValue</h2>
+    <div className="p-4">
+      <h1 className="text-xl font-bold">Custom Hook useLocalStorage</h1>
       <input
         type="text"
-        placeholder="Ketik nama..."
         value={name}
         onChange={(e) => setName(e.target.value)}
+        placeholder="Masukkan nama"
+        className="border p-2 mt-2"
       />
-      <p>Nama kamu: {name}</p>
+      <p className="mt-2">Nama tersimpan: {name}</p>
     </div>
   );
 }
